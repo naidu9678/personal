@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions
+ xmlns="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+ targetNamespace="http://service.web.homologation.transport.nic/"
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:tns="http://service.web.homologation.transport.nic/"
+><types
+><xsd:schema
+ elementFormDefault="qualified"
+ attributeFormDefault="unqualified"
+ targetNamespace="http://service.web.homologation.transport.nic/"
+ xmlns:xsdLocal2="http://service.web.homologation.transport.nic/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+><xsd:annotation
+><xsd:documentation
+>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD Generation</xsd:documentation
+></xsd:annotation
+><xsd:element
+ name="uploadResponse"
+ type="xsdLocal2:uploadResponse"
+></xsd:element
+><xsd:complexType
+ name="uploadResponseTopElmt"
+><xsd:sequence
+><xsd:element
+ name="uploadResponse"
+ maxOccurs="1"
+ minOccurs="1"
+ type="xsdLocal2:uploadResponse"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+><xsd:complexType
+ name="uploadResponse"
+><xsd:sequence
+><xsd:element
+ name="return"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+></xsd:schema
+><xsd:schema
+ elementFormDefault="qualified"
+ attributeFormDefault="unqualified"
+ targetNamespace="http://service.web.homologation.transport.nic/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+><xsd:element
+ name="CustomHeaderContext"
+><xsd:complexType
+><xsd:sequence
+><xsd:any
+></xsd:any
+></xsd:sequence
+></xsd:complexType
+></xsd:element
+><xsd:element
+ name="upload_Input"
+><xsd:complexType
+><xsd:sequence
+><xsd:element
+ ref="tns:CustomHeaderContext"
+ minOccurs="0"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+></xsd:element
+><xsd:element
+ name="_XMLHierarchyOutput"
+><xsd:complexType
+><xsd:sequence
+><xsd:any
+></xsd:any
+></xsd:sequence
+></xsd:complexType
+></xsd:element
+><xsd:element
+ name="upload_Output"
+><xsd:complexType
+><xsd:sequence
+><xsd:element
+ name="faultactor"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ ref="tns:CustomHeaderContext"
+ minOccurs="0"
+></xsd:element
+><xsd:element
+ ref="tns:_XMLHierarchyOutput"
+ minOccurs="0"
+></xsd:element><xsd:element
+ ref="tns:uploadResponse"
+ minOccurs="0"></xsd:element><xsd:element
+ name="faultcode"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="faultstring"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+></xsd:element
+></xsd:schema
+><xsd:schema
+ elementFormDefault="qualified"
+ attributeFormDefault="unqualified"
+ xmlns:xsdLocal1="http://service.web.homologation.transport.nic/"
+ targetNamespace="http://service.web.homologation.transport.nic/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+><xsd:annotation
+><xsd:documentation
+>Copyright (C) 2001-2004 Siebel Systems, Inc. All rights reserved. Siebel XSD Generation</xsd:documentation
+></xsd:annotation
+><xsd:element
+ name="upload"
+ type="xsdLocal1:upload"
+></xsd:element
+><xsd:complexType
+ name="uploadTopElmt"
+><xsd:sequence
+><xsd:element
+ name="upload"
+ maxOccurs="1"
+ minOccurs="1"
+ type="xsdLocal1:upload"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+><xsd:complexType
+ name="upload"
+><xsd:sequence
+><xsd:element
+ name="userId"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="transactionId"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="inventoryDetails"
+ maxOccurs="unbounded"
+ minOccurs="0"
+ type="xsdLocal1:inventoryDetails"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+><xsd:complexType
+ name="inventoryDetails"
+><xsd:sequence
+><xsd:element
+ name="chassisNo"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="colorCode"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="dealerCode"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="engineNo"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="featureCode"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="monthYear"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="unique_model_ref_no"
+ maxOccurs="1"
+ minOccurs="0"
+ type="xsd:string"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+></xsd:schema
+></types
+><message
+ name="upload_Input"
+><part
+ name="upload_Input"
+ element="tns:upload_Input"
+></part
+></message
+><message
+ name="upload_Output"
+><part
+ name="upload_Output"
+ element="tns:upload_Output"
+></part
+></message
+><portType
+ name="dataportwsPort"
+><operation
+ name="upload"
+><input
+ message="tns:upload_Input"
+></input
+><output
+ message="tns:upload_Output"
+></output
+></operation
+></portType
+>
+	<binding name="dataportwsPort" type="tns:dataportwsPort">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document"></soap:binding>
+		<operation name="upload">
+			<soap:operation soapAction=""></soap:operation>
+			<input>
+				<soap:body use="literal"></soap:body>
+			</input>
+			<output>
+				<soap:body use="literal"></soap:body>
+			</output>
+		</operation>
+	</binding>
+	<service
+ name="dataportws"
+><port
+ binding="tns:dataportwsPort"
+ name="dataportwsPort"
+><soap:address
+ location="https://164.100.128.162:443/makerws/dataportws"
+></soap:address
+></port
+></service
+></definitions
+>
